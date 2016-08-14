@@ -1,0 +1,7 @@
+<div class="container padding-top-50 default-background-color">
+  <%= bootstrap_form_for @score, url: game_scores_path do |f| %>
+    <%= f.collection_select(:game_id, Game.all, :id, :name) %>
+    <%= f.number_field :amount %>
+    <%= f.submit "Add New Score" %>
+  <% end %>
+</div>

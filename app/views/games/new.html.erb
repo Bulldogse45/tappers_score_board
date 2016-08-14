@@ -1,0 +1,7 @@
+<div class="container padding-top-50 default-background-color">
+  <%= bootstrap_form_for(@game) do |f| %>
+    <%= f.text_field :name %>
+    <%= f.text_field :description %>
+    <%= f.submit "Create Game" %>
+  <% end %>
+</div>

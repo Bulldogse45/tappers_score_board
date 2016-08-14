@@ -1,0 +1,5 @@
+<div class="container padding-top-50">
+  <h3><%= @score.game.name %></h3>
+  <p><%= @score.amount %></p>
+  <p><%= link_to "New Score", new_game_score_path(@game), class: "btn btn-primary" %></p>
+</div>

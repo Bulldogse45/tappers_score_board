@@ -1,62 +1,29 @@
 <div id="slider" data-section="home">
   <div class="owl-carousel owl-carousel-fullwidth">
     <!-- You may change the background color here. -->
+    <% @games.each do |g| %>
       <div class="item" style="background: #352f44;">
         <div class="container" style="position: relative;">
           <div class="row">
-            <div class="col-md-7 col-sm-7">
+            <div class="">
               <div class="fh5co-owl-text-wrap">
                 <div class="fh5co-owl-text">
-                  <h1 class="fh5co-lead to-animate">Case Study Title</h1>
-                <h2 class="fh5co-sub-lead to-animate">100% Free Fully Responsive HTML5 Bootstrap Template. Crafted with love by the fine folks at <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a></h3>
-                <p class="to-animate-2"><a href="#" class="btn btn-primary btn-lg">View Case Study</a></p>
+                  <h1 class="fh5co-lead to-animate"><%= g.name %></h1>
+                  <h4 class="fh5co-sub-lead to-animate col-lg-3"><%= g.description %>...</h4>
+                  <div class="to-animate-2 col-lg-9">
+                    <% g.scores.each_with_index do |s, i| %>
+                    <div class="col-lg-offset-3 col-lg-3"><%= i+1  %></div>
+                    <div class="col-lg-3"><%= g.name %></div>
+                    <div class="col-lg-3"><%= s.amount %></div>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-4 col-md-push-1 col-sm-4 col-sm-push-1 iphone-image">
-              <div class="iphone to-animate-2"><img src="images/iphone-2.png" alt="Free HTML5 Template by FREEHTML5.co"></div>
-            </div>
           </div>
         </div>
       </div>
-    <!-- You may change the background color here.  -->
-      <div class="item" style="background: #38569f;">
-        <div class="container" style="position: relative;">
-          <div class="row">
-            <div class="col-md-7 col-md-push-1 col-md-push-5 col-sm-7 col-sm-push-1 col-sm-push-5">
-              <div class="fh5co-owl-text-wrap">
-                <div class="fh5co-owl-text">
-                  <h1 class="fh5co-lead to-animate">Case Study Title</h1>
-                <h2 class="fh5co-sub-lead to-animate">100% Free Fully Responsive HTML5 Bootstrap Template. Crafted with love by the fine folks at <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a></h3>
-                <p class="to-animate-2"><a href="#" class="btn btn-primary btn-lg">View Case Study</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-md-pull-7 col-sm-4 col-sm-pull-7 iphone-image">
-              <div class="iphone to-animate-2"><img src="images/iphone-1.png" alt="Free HTML5 Template by FREEHTML5.co"></div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="item" style="background-image:url(images/slide_5.jpg)">
-        <div class="overlay"></div>
-        <div class="container" style="position: relative;">
-          <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center">
-              <div class="fh5co-owl-text-wrap">
-                <div class="fh5co-owl-text">
-                  <h1 class="fh5co-lead to-animate">Grab it now for free!</h1>
-                <h2 class="fh5co-sub-lead to-animate">100% Free Fully Responsive HTML5 Bootstrap Template. Crafted with love by the fine folks at <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a></h3>
-                <p class="to-animate-2"><a href="http://freehtml5.co/" target="_blank" class="btn btn-primary btn-lg">Download This Template</a></p>
-              </div>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <% end %>
   </div>
 </div>
 <div id="fh5co-our-services" data-section="services">
@@ -72,42 +39,17 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
-        <div class="box to-animate">
-          <div class="icon colored-1"><span><i class="icon-mustache"></i></span></div>
-          <h3>100% free</h3>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+      <% @games.each do |g| %>
+        <%= link_to g do %>
+        <div class="col-md-4">
+          <div class="box to-animate">
+            <div class="icon colored-1"><span><i class="icon-mustache"></i></span></div>
+            <h3><%=g.name%></h3>
+            <p><%=g.description%></p>
+          </div>
         </div>
-        <div class="box to-animate">
-          <div class="icon colored-4"><span><i class="icon-heart"></i></span></div>
-          <h3>Made with love</h3>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="box to-animate">
-          <div class="icon colored-2"><span><i class="icon-screen-desktop"></i></span></div>
-          <h3>Fully responsive</h3>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-        </div>
-        <div class="box to-animate">
-          <div class="icon colored-5"><span><i class="icon-rocket"></i></span></div>
-          <h3>Fast &amp; light</h3>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="box to-animate">
-          <div class="icon colored-3"><span><i class="icon-eye"></i></span></div>
-          <h3>Retina-ready</h3>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-        </div>
-        <div class="box to-animate">
-          <div class="icon colored-6"><span><i class="icon-user"></i></span></div>
-          <h3>For creative like you!</h3>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-        </div>
-      </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
