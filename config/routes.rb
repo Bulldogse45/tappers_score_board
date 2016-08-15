@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resource :user_session
+  resources :users
   resources :games do
     resources :scores
   end
