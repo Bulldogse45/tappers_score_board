@@ -9,6 +9,7 @@ class ScoresController < ApplicationController
 
     def new
       @score = Score.new
+      @score.game_id = params[:game_id]
     end
 
     def edit

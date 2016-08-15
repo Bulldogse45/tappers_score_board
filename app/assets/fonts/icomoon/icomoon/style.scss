@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?qtatmt');
-	src:url('fonts/icomoon.eot?qtatmt#iefix') format('embedded-opentype'),
-		url('fonts/icomoon.ttf?qtatmt') format('truetype'),
-		url('fonts/icomoon.woff?qtatmt') format('woff'),
-		url('fonts/icomoon.svg?qtatmt#icomoon') format('svg');
+	src:font-url('icomoon.eot?qtatmt');
+	src:font-url('icomoon.eot?qtatmt#iefix') format('embedded-opentype'),
+		font-url('icomoon.ttf?qtatmt') format('truetype'),
+		font-url('icomoon.woff?qtatmt') format('woff'),
+		font-url('icomoon.svg?qtatmt#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -2435,4 +2435,3 @@
 .icon-ellipsis:before {
 	content: "\e129";
 }
-
