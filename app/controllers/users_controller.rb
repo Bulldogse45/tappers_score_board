@@ -18,13 +18,13 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = @current_user
+    @user = User.find(params[:id])
     render 'new'
   end
 
   def update
-    @user = @current_user # makes our views "cleaner" and more consistent
-    if @user.update_attributes(params[:user])
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
       flash[:notice] = "Account updated!"
       redirect_to user_path(@user)
     else
@@ -35,6 +35,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:password, :password_confirmation, :email)
+    params.require(:user).permit(:password, :password_confirmation, :email, :name)
   end
 end
