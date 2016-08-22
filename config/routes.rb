@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :groups
   resource :user_session
   resources :users
   resources :games do
