@@ -80,7 +80,11 @@
           <div class="box to-animate">
             <div class="icon colored-1"><span><i class="icon-mustache"></i></span></div>
             <h3><%=g.name%></h3>
-            <p><%=g.users%></p>
+            <ul>
+              <% g.group_memberships.each do |gm| %>
+                <%= gm.user.name %>
+              <% end %>
+            </ul>
           </div>
         </div>
         <% end %>
