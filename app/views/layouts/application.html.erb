@@ -47,8 +47,9 @@
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav navbar-right">
 		            <li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
-                <li><a href="#" data-nav-section="services"><span>Games</span></a></li>
-                <li><a href="#" data-nav-section="about"><span>About</span></a></li>
+                <li><a href="#" data-nav-section="games"><span>Games</span></a></li>
+                <li><a href="#" data-nav-section="groups"><span>Groups</span></a></li>
+								<li><a href="#" data-nav-section="about"><span>About</span></a></li>
 								<% if current_user %>
 									<li><%= link_to "Log Out", user_session_path, :method => :delete %></li>
 								<% else %>
