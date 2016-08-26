@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,14 +39,21 @@
 		        <div class="navbar-header">
 		        	<!-- Mobile Toggle Menu Button -->
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		          	<%= link_to "Home", root_path, class:"navbar-brand"  %>
+								<a href="<%=root_url%>" class="navbar-brand" data-nav-section="home">Home</a>
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav navbar-right">
-		            <li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
-                <li><a href="#" data-nav-section="games"><span>Games</span></a></li>
-                <li><a href="#" data-nav-section="groups"><span>Groups</span></a></li>
-								<li><a href="#" data-nav-section="about"><span>About</span></a></li>
+								<% if current_page?(root_url) %>
+			            <li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
+	                <li><a href="#" data-nav-section="games"><span>Games</span></a></li>
+	                <li><a href="#" data-nav-section="groups"><span>Groups</span></a></li>
+									<li><a href="#" data-nav-section="about"><span>About</span></a></li>
+								<% else %>
+									<li class="active"><a href="<%= root_url %>" data-nav-section="home"><span>Home</span></a></li>
+									<li><a href="<%= root_url %>" data-nav-section="games"><span>Games</span></a></li>
+									<li><a href="<%= root_url %>" data-nav-section="groups"><span>Groups</span></a></li>
+									<li><a href="<%= root_url %>" data-nav-section="about"><span>About</span></a></li>
+								<% end %>
 								<% if current_user %>
 									<li><%= link_to "Log Out", user_session_path, :method => :delete %></li>
 								<% else %>
@@ -74,19 +78,15 @@
 		<div class="container">
 			<div class="row row-bottom-padded-sm">
 				<div class="col-md-12">
-					<p class="copyright text-center">&copy; 2015 Free <a href="index.html">Crew</a>. All Rights Reserved. <br> Free HTML5 Template by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> | Images by <a href="http://pexels.com/" target="_blank">Pexels</a> &amp;  <a href="http://unsplash.com/" target="_blank">Unsplash</a></p>
+					<p class="copyright text-center">Created 2016 <a href="http://www.matthewjfair.com/"> by Matt Fair</a>. <br> Inspired by <a href="http://tappersarcadebar.com/" target="_blank">Tappers Arcade Bar</a></p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<ul class="social social-circle">
-						<li><a href="#"><i class="icon-twitter"></i></a></li>
-						<li><a href="#"><i class="icon-facebook"></i></a></li>
-						<li><a href="#"><i class="icon-youtube"></i></a></li>
-						<li><a href="#"><i class="icon-pinterest"></i></a></li>
-						<li><a href="#"><i class="icon-linkedin"></i></a></li>
-						<li><a href="#"><i class="icon-instagram"></i></a></li>
-						<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						<li><a href="https://twitter.com/tappersarcade"><i class="icon-twitter"></i></a></li>
+						<li><a href="https://www.facebook.com/tappersarcadebar/"><i class="icon-facebook"></i></a></li>
+						<li><a href="https://www.instagram.com/explore/locations/1008823873/"><i class="icon-instagram"></i></a></li>
 					</ul>
 				</div>
 			</div>
