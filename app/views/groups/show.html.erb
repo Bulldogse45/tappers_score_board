@@ -1,4 +1,8 @@
 <div class="container padding-top-50">
   <h3><%= @group.name %></h3>
   <h5><%= @group.commissioner.name %></h5>
+  <%= bootstrap_form_for(@group_membership) do |f| %>
+    <%= f.hidden_field(group: @group, user: current_user) %>
+    <%= f.submit "Join Group" %>
+  <% end %>
 </div>
