@@ -23,9 +23,8 @@ ActiveRecord::Schema.define(version: 20160824234440) do
   create_table "group_memberships", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "group_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "commissioner_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.boolean  "commissioner"
   end
 
