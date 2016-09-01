@@ -1,4 +1,17 @@
 <div class="container padding-top-50">
   <h3><%= @group.name %></h3>
-  <h5><%= @group.commissioner.name %></h5>
+  <h5>Commissioner: <%= @group.commissioner.name %></h5>
+  <h5>Users</h5>
+  <ul>
+    <% @members.each do |m| %>
+      <li><%= m.name %></li>
+    <% end %>
+  </ul>
+  <% unless current_user.member_of(@group) %>
+    <%= bootstrap_form_for @group_membership do |f| %>
+      <%= f.hidden_field :group_id, :value => @group.id %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.submit "Join Group" %>
+    <% end %>
+  <% end %>
 </div>

@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
   has_many :games, through: :scores
   has_many :groups, through: :group_memberships
   has_many :group_memberships
+
+  def member_of(group)
+    group_memberships.where(group_id: group.id).present?
+  end
 end
