@@ -12,7 +12,7 @@ class GamesController < ApplicationController
     end
 
     def edit
-      @game = Game.new
+      @game = Game.find(params[:id])
       render 'new'
     end
 
