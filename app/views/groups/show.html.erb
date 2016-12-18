@@ -7,7 +7,7 @@
       <li><%= m.name %></li>
     <% end %>
   </ul>
-  <% unless current_user.member_of(@group) %>
+  <% if current_user && !current_user.member_of(@group) %>
     <%= bootstrap_form_for @group_membership do |f| %>
       <%= f.hidden_field :group_id, :value => @group.id %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
