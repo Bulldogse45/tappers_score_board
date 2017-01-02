@@ -25,8 +25,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'authlogic'
-
 gem 'bootstrap_form'
+gem 'declarative_authorization', github: "stffn/declarative_authorization"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

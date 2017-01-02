@@ -5,6 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+roles = Role.create([
+  {title: 'admin'},
+  {title: 'group_member'}
+]) if Role.count == 0
 
 games = Game.create([{name: 'Galaga', description: 'A fixed shooter arcade game developed and published by Namco in Japan and published by Midway in North America in 1981. It is the sequel to Galaxian, released in 1979. The gameplay of Galaga puts the player in control of a spacecraft which is situated at the bottom of the screen.' },
                       {name: 'Joust', description: 'An arcade game developed by Williams Electronics and released in 1982. While not the first game to feature two-player cooperative play, Joust was more successful than its predecessors and popularized the concept. The player uses a button and joystick to control a knight riding a flying ostrich. The object is to progress through levels by defeating groups of enemy knights riding buzzards.'},
@@ -43,6 +47,8 @@ games = Game.create([{name: 'Galaga', description: 'A fixed shooter arcade game 
                       {name: 'Blazing Star', description: 'a scrolling shooter video game for the Neo Geo home game system. It is the sequel to Pulstar, which was itself a close cousin to the R-Type franchise. A typically hefty Neo Geo ROM at 346 Mb, the game makes extensive use of pseudo-3D prerendered sprites, brief anime and CGI cutscenes (mostly during the intro sequence), and frequent Engrish voice samples and captions'}
                     ])
 user = User.create([{:email => "bulldogs45@aol.com", :name => "Player1", :password => "yMos7Xogq|u", :password_confirmation => "yMos7Xogq|u"}                    ])
+
+user.roles << Role.find_by(title: "admin")
 
 group = Group.create([{:name => "Tappers"}])
 group_membership = GroupMembership.create([ {group_id: 1, user_id: 1, commissioner: true}])

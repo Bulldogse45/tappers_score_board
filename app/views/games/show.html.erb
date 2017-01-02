@@ -1,5 +1,7 @@
 <div class="container padding-top-50">
   <h3><%= @game.name %></h3>
-  <p><%= @game.description %></p>
-  <p><%= link_to "New Score", new_game_score_path(@game), class: "btn btn-primary" if current_user %></p>
+  <p><%= @game.description %></p>  
+  <% if permitted_to?(:update, :games) %>
+    <p><%= link_to "New Score", new_game_score_path(@game), class: "btn btn-primary" if current_user %></p>
+  <% end %>
 </div>
