@@ -5,4 +5,7 @@ class WelcomeController < ApplicationController
     current_user ? @groups = current_user.groups : @groups = Group.all
   end
 
+  def about
+    
+  end
 end
