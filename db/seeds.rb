@@ -46,7 +46,7 @@ games = Game.create([{name: 'Galaga', description: 'A fixed shooter arcade game 
                       {name: 'Zaxxon', description: 'a 1982 isometric shooter arcade game developed and released by Sega. Some sources claim that Japanese electronics company Ikegami Tsushinki also worked on the development of Zaxxon. The game gives the player the experience of flying a fighter craft through a fortress while shooting at enemy entities (missiles, enemy gunfire, etc.)'},
                       {name: 'Blazing Star', description: 'a scrolling shooter video game for the Neo Geo home game system. It is the sequel to Pulstar, which was itself a close cousin to the R-Type franchise. A typically hefty Neo Geo ROM at 346 Mb, the game makes extensive use of pseudo-3D prerendered sprites, brief anime and CGI cutscenes (mostly during the intro sequence), and frequent Engrish voice samples and captions'}
                     ])
-user = User.create([{:email => "bulldogs45@aol.com", :name => "Player1", :password => "yMos7Xogq|u", :password_confirmation => "yMos7Xogq|u"}                    ])
+user = User.create([{:email => "bulldogs45@aol.com", :name => "Player1", :password => "yMos7Xogq|u", :password_confirmation => "yMos7Xogq|u"}                    ]).first
 
 user.roles << Role.find_by(title: "admin")
 

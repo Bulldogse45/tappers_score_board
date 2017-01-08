@@ -1,0 +1,30 @@
+<div id="fh5co-our-services" data-section="games">
+  <div class="container">
+    <%= link_to "New Group", new_group_path, html_options = {class: "btn btn_success"} if permitted_to?(:create, :games) %>
+    <div class="row row-bottom-padded-sm">
+      <div class="col-md-12 section-heading text-center">
+        <h2 class="to-animate">Games</h2>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 to-animate">
+            <h3>Old Computer Games Couldn’t Be Won. They Just Got Harder and Faster Until You Died. Just Like Real Life</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <% @games.each do |g| %>
+        <%= link_to g do %>
+        <div class="col-md-4">
+          <div class="box to-animate">
+            <div class="icon colored-1"><span><i class="icon-mustache"></i></span></div>
+            <h3><%=g.name%></h3>
+            <p><%=g.description%></p>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
