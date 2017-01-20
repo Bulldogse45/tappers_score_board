@@ -399,9 +399,9 @@ h1, h2, h3, h4, h5, h6 {
 #fh5co-testimonials,
 #fh5co-pricing,
 #fh5co-press {
-	padding: 7em 0;
+	padding: 2em 0;
 	@media screen and (max-width: $screen-xs) {
-		padding: 5em 0;
+		padding: 2em 0;
 	}
 }
 #fh5co-testimonials {
@@ -803,7 +803,7 @@ h1, h2, h3, h4, h5, h6 {
 // Person
 .person {
 	text-align: center;
-	margin-bottom: 40px;
+	margin-bottom: 0px;
 	float: left;
 	width: 100%;
 	img {
@@ -1183,7 +1183,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 .row-bottom-padded-lg {
-	padding-bottom: 7em;
+	padding-bottom: 2em;
 	@media screen and (max-width: $screen-sm ) {
 		padding-bottom: 2em;
 	}
