@@ -7,4 +7,8 @@ class Group < ActiveRecord::Base
   def commissioner
     group_memberships.where(commissioner: true).first.user
   end
+
+  def member(user)
+    group_memberships.where(member_id: user.id).present?
+  end
 end
